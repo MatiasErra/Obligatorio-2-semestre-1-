@@ -1,0 +1,167 @@
+<html>
+<head>
+    
+    <title>Inmobiliaria</title>
+<link rel="stylesheet" href="css/estilo.css">
+<script  src="dominio/clientesinmovi.js"></script>
+<script  src="dominio/propiedades.js"></script>
+<script  src="dominio/vendedor.js"></script>
+<script  src="dominio/ventas.js"></script>
+<script  src="dominio/consultas.js"></script>
+</head>
+
+<body>
+
+
+<form id="clientes">
+    <h1>ABM Clientes</h1>
+    <hr>
+    <p><label>Id:       </label><input id="idCliente" autofocus onkeypress="return isNumberKey(event)"></td></tr></p>
+	<p><label>Ci:       </label><input id="ciCliente" autofocus onkeypress="return isNumberKey(event)"></td></tr></p>
+    <p><laber>Nombre:   </label><input id="nombreCliente"></p>
+	<p><label>Apellido: </label><input id="apellidoCliente"></td></tr></p>
+	<p><label>Telefono:   </label><input id="telefonoCli" autofocus onkeypress="return isNumberKey(event)"></td></tr></p>
+	<p><label>Email:   </label><input id="emailCli"></p>
+    <p><label>Direccion: </label><input id="direccionCli"></p>
+	
+    <hr>
+    <p>
+        
+        <input type="button" value="Alta" onclick="altaCliente()">
+        <input type="button" value="Baja" onclick="bajaCliente()">
+        <input type="button" value="Modificar" onclick="modificarCliente()">
+		<input type="reset" value="Reset">
+    </p>
+    <p>Lista de clientes:</p>
+    <p><select size="6" onclick="seleccionarCliente()" id="listaClientes" class="lista"></select></p>
+	
+	</form>
+	
+	<form id="vendedores">
+    <h1>ABM Vendedores</h1>
+    <hr>
+    <p><label>Id:       </label><input id="idVendedor" autofocus onkeypress="return isNumberKey(event)"></td></tr></p>
+	<p><label>Ci:       </label><input id="ciVendedor" autofocus onkeypress="return isNumberKey(event)"></td></tr></p>
+    <p><laber>Nombre:   </label><input id="nombreVendedor"></p>
+	<p><label>Apellido: </label><input id="apellidoVendedor"></td></tr></p>
+	<p><label>Telefono:   </label><input id="telefonoVen" autofocus onkeypress="return isNumberKey(event)"></td></tr></p>
+	<p><label>Email:   </label><input id="emailVen"></p>
+    <p><label>Direccion: </label><input id="direccionVen"></p>
+	<p><label>Cartera: </label><input id="carteraVendedor" autofocus onkeypress="return isNumberKey(event)"></td></tr></p>
+    <hr>
+    <p>
+        
+        <input type="button" value="Alta" onclick="altaVendedor()">
+        <input type="button" value="Baja" onclick="bajaVendedor()">
+        <input type="button" value="Modificar" onclick="modificarVendedor()">
+		<input type="reset" value="Reset">
+    </p>
+    <p>Lista de vendedores:</p>
+    <p><select size="6" onclick="seleccionarVendedor()" id="listaVendedores" class="lista"></select></p>
+	
+	</form>
+	
+	
+	
+	
+	
+	
+	<form id="propiedades">
+    <h1>ABM Propiedades </h1>
+    <hr>
+	<p><label>Id:      		</label><input id="idPropiedad" autofocus onkeypress="return isNumberKey(event)"></p>
+    <p><label>M2:      		</label><input id="mts2" autofocus onkeypress="return isNumberKey(event)"></p>
+	<p><label>Dormitorios:    </label><input id="dormitorios" autofocus onkeypress="return isNumberKey(event)"></p>
+    <p><label>Banos:  			</label> <input id="banos" autofocus onkeypress="return isNumberKey(event)"></p>
+	<p>Tipo:				</label><select id="tipoProp">
+			<option value="Apartamento">Apartamento</option>
+            <option value="Casa">Casa</option>
+		</select></p>
+	<p>Garaje:				</label><select id="garaje">
+			<option value="Si">Si</option>
+            <option value="No">No</option>
+		</select></p>
+	
+	<p>Parrillero:   		<select id="parrillero">
+			<option value="Si">Si</option>
+            <option value="No">No</option>
+		</select></p>
+	<p><label>Barrio:   	</label><input id="barrio"></p>
+	<p><label>Ciudad:  	 </label><input id="ciudad"></p>
+    <p><label>Direccion: 	</label><input id="direccionProp"></p>
+	<p><label>Precio: 	</label><input id="precio" autofocus onkeypress="return isNumberKey(event)"></p>
+   
+    <hr>
+    <p>
+        
+        <input type="button" value="Alta" onclick="altaPropiedad()">
+        <input type="button" value="Baja" onclick="bajaPropiedad()">
+        <input type="button" value="Modificar" onclick="modificarProp()">
+		<input type="reset" value="Reset">
+    </p>
+    <p>Lista de Propiedades:</p>
+    <p><select size="6" onclick="seleccionarPropiedades()" id="listaProp" class="lista"></select></p>
+</form>
+
+
+<form id="ventas">
+    <h1>Ventas</h1>
+    <hr>
+    <p><label>Id:       </label><input id="idVenta" autofocus onkeypress="return isNumberKey(event)"></p>
+	<p><label>Fecha:       </label><input id="fecha" type="date"></p>
+    <p><label>Monto:   </label><input id="monto" autofocus onkeypress="return isNumberKey(event)"></p>
+	<p><label>Propietario: </label><input id="propietarioVenta" autofocus onkeypress="return isNumberKey(event)"></p>
+	<p><label>Propiedad: </label><select id="cantidadVenta"></select></</p>
+	<p><label>Vendedor:   </label><select id="vendedorVenta"></select></p>
+	<p><label>Cliente: </label><select id="clientesVenta"></select></p>
+
+    </p>
+    <hr>
+    <p>
+        
+        <input type="button" value="Alta" onclick="altaVenta()">
+        <input type="button" value="Baja" onclick="bajaVenta()">
+        <input type="button" value="Modificar" onclick="modificarVenta()">
+		<input type="reset" value="Reset">
+    </p>
+    <p>Lista de Ventas:</p>
+    <p><select size="6" onclick="seleccionarVenta()" id="listaVenta" class="lista"></select></p>
+	
+	</form>
+	
+<form id="consultas">
+    <h1>Consultas</h1>
+    <hr>
+    <p><input type="button" value="Dado un vendedor mostrar cartera" onclick="mostrarCartera()"></p>
+    <p><input type="button" value="Mostrar las compras de un cliente" onclick="clienteCompras()"></p>
+    <p><input type="button" value="Mostrar la propiedad mas cara vendida" onclick="propCara()"></p>
+    <p><input type="button" value="Mostrar las propiedades cercanas" onclick="Consulta5()"></p>
+    <hr>
+    <p id="resultadoConsulta"></p>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
